@@ -14,3 +14,6 @@ Mentor:- Neela Santosh
 
 Description:-
 i used python for backend programming, api to fetch weather data and for visualization i used matplotlib
+
+Output:-
+
