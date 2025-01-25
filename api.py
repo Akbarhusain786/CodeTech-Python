@@ -59,8 +59,8 @@ def create_gauge(ax, value, title, min_val, max_val, segments, colors):
     ax.plot([0, 0.9 * np.cos(theta)], [0, 0.9 * np.sin(theta)], color="black", linewidth=3)
 
     # Add value text above needle formula
-    text_x = 1.2 * np.cos(theta)
-    text_y = 1.2 * np.sin(theta)
+    text_x = 1.1 * np.cos(theta)
+    text_y = 1.1 * np.sin(theta)
     ax.text(text_x, text_y, f"{value}", ha="center", va="center", fontsize=12, fontweight="bold")
 
     # Add theta labels
@@ -109,6 +109,7 @@ if __name__ == "__main__":
         axs[1, 0].set_xticks([0])
         axs[1, 0].set_xticklabels([description])
         axs[1, 0].set_yticks([])
+        axs[1, 0].text(0, 0.5, description, fontsize=14, fontweight="bold", ha="center", color="black")
         axs[1, 0].legend(loc="upper right")
 
         # Pressure bar chart
@@ -116,7 +117,10 @@ if __name__ == "__main__":
         axs[1, 1].set_title("Pressure (hPa)")
         axs[1, 1].set_ylabel("hPa")
         axs[1, 1].grid(True)
-
+        axs[1, 1].text(
+            0, pressure / 2, f"{pressure} hPa",
+            ha="center", va="center", fontsize=12, fontweight="bold", color="white"
+        )
         # Adjust layout and show the dashboard
         plt.tight_layout()
         plt.suptitle(f"Weather Dashboard for {city_name}", fontsize=16, y=1.02)
